@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>知识问答系统</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">知识问答系统</h1>
+            <p class="subtitle">请选择学习科目</p>
+        </div>
+        <div id="subjectGrid" class="subject-grid"></div>
+    </div>
+
+    <script>
+        fetch('/api/subjects')
+            .then(res => res.json())
+            .then(subjects => {
+                const grid = document.getElementById('subjectGrid');
+                subjects.forEach(subject => {
+                    const card = document.createElement('div');
+                    card.className = 'subject-card';
+                    card.innerHTML = `
+                        <h3>${subject.replace(/_/g, ' ').toUpperCase()}</h3>
+                        <p>点击开始练习</p>
+                    `;
+                    card.onclick = () => {
+                        window.location.href = `/question.html?subject=${encodeURIComponent(subject)}`;
+                    };
+                    grid.appendChild(card);
+                });
+                
+                // 添加空状态提示
+                if(subjects.length === 0) {
+                    grid.innerHTML = '<p class="empty-tip">暂无可用科目</p>';
+                }
+            })
+            .catch(error => {
+                console.error('加载科目失败:', error);
+                document.getElementById('subjectGrid').innerHTML = 
+                    '<p class="error-tip">科目加载失败，请刷新重试</p>';
+            });
+    </script>
+</body>
+</html>

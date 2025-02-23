@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>练习页面</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="quiz-header">
+            <h1 id="subjectTitle"></h1>
+            <div class="stats">已答题数: <span id="answeredCount">0</span></div>
+        </div>
+        <div id="questionContainer">
+            <div class="question-card">
+                <div class="question-header">
+                    <h2>当前问题</h2>
+                    <div class="actions">
+                        <button class="btn secondary" onclick="toggleAnswer()">显示答案</button>
+                        <button class="btn primary" onclick="loadNewQuestion()">下一题 ➔</button>
+                    </div>
+                </div>
+                <div class="question-body">
+                    <p id="questionText"></p>
+                    <div id="answer" style="display: none;">
+                        <hr>
+                        <h3>参考答案：</h3>
+                        <p id="correctAnswer"></p>
+                    </div>
+                </div>
+                </div>
+        </div>
+        <div class="answer-card">
+            <div class="answer-header">
+                <h2>填写你的答案</h2>
+                <div id="submitMessage" class="submit-message"></div>
+            </div>
+            <textarea id="userAnswer" placeholder="在此输入你的答案..." rows="3"></textarea>
+            <div class="form-actions">
+                <button class="btn submit-btn" onclick="submitAnswer()">提交答案</button>
+            </div>
+        </div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>
