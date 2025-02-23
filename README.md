@@ -1,8 +1,6 @@
 ```markdown
 # 知识问答系统 - Knowledge Q&A System
 
-![项目截图](https://via.placeholder.com/800x400.png?text=项目截图) <!-- 替换为实际截图链接 -->
-
 一个基于Node.js和Express构建的在线知识问答系统，支持多科目题库管理、随机出题、答案交互和答题记录功能。
 
 ## ✨ 功能特性
@@ -31,7 +29,7 @@ git clone https://github.com/yourusername/knowledge-qa.git
 
 # 安装依赖
 cd knowledge-qa
-npm install
+npm install			
 
 # 初始化题库 (示例)
 cp -r database.example database
@@ -98,3 +96,8 @@ knowledge-qa/
 > 4. 添加项目相关徽章（可选）
 
 这个README模板包含了技术文档的关键要素，同时保持了良好的可读性。需要任何调整或补充请随时告知！
+```
+
+![image-20250223183240287](E:\薛定鹅的知识库\自制小工具\knowledge-qa\img\image-20250223183240287.png)
+
+![image-20250223183403058](E:\薛定鹅的知识库\自制小工具\knowledge-qa\img\image-20250223183403058.png)
